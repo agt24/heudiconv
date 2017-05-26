@@ -25,7 +25,7 @@ def infotodict(seqinfo):
     for idx, seq in enumerate(seqinfo):
         x,y,z,n_vol,protocol,dcm_dir = (seq[6], seq[7], seq[8], seq[9], seq[12], seq[3])
         # t1_mprage --> T1w
-        if (z == 160) and (n_vol == 1) and ('t1_mprage' in protocol) and ('XX' not in dcm_dir):
+        if (z == 256) and ('MPRAGE' in protocol) and ('XX' not in dcm_dir):
             info[t1w] = [seq[2]]
         # t2_tse --> T2w
         if (z == 35) and (n_vol == 1) and ('t2_tse' in protocol) and ('XX' not in dcm_dir):
